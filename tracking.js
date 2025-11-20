@@ -79,6 +79,7 @@ function setupEventListeners() {
   const backBtnSimple = document.querySelector(".back-btn-simple")
   const viewOscarBtn = document.getElementById("view-oscar")
   const viewYuritzyBtn = document.getElementById("view-yuritzy")
+  const logoutBtn = document.querySelector(".logout-btn")
 
   userBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -154,6 +155,13 @@ function setupEventListeners() {
       viewYuritzyBtn.classList.add("active")
       viewOscarBtn.classList.remove("active")
       loadAndDisplayResults(targetUser)
+    })
+  }
+
+  if (logoutBtn) {
+    logoutBtn.addEventListener("click", () => {
+      currentUser = null
+      showScreen("userSelection")
     })
   }
 }
