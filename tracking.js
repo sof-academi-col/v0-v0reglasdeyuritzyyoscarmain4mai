@@ -76,7 +76,6 @@ function setupEventListeners() {
   const checkModeBtn = document.getElementById("check-mode-btn")
   const viewModeBtn = document.getElementById("view-mode-btn")
   const backBtns = document.querySelectorAll(".back-btn")
-  const backBtnSimple = document.querySelector(".back-btn-simple")
   const viewOscarBtn = document.getElementById("view-oscar")
   const viewYuritzyBtn = document.getElementById("view-yuritzy")
   const logoutBtn = document.querySelector(".logout-btn")
@@ -128,13 +127,6 @@ function setupEventListeners() {
     })
   })
 
-  if (backBtnSimple) {
-    backBtnSimple.addEventListener("click", () => {
-      showScreen("userSelection")
-      currentUser = null
-    })
-  }
-
   document.getElementById("save-progress-btn").addEventListener("click", saveProgress)
   document.getElementById("complete-session-btn").addEventListener("click", completeSession)
 
@@ -160,6 +152,7 @@ function setupEventListeners() {
 
   if (logoutBtn) {
     logoutBtn.addEventListener("click", () => {
+      console.log("[v0] Logout button clicked")
       currentUser = null
       showScreen("userSelection")
     })
